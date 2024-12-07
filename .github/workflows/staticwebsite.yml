@@ -38,8 +38,8 @@ jobs:
     - name: Terraform Plan
       run: terraform plan -out=tfplan
 
-    - name: Publish TErraform Plan
-      uses: actions/upload-artifact@v2
+    - name: Publish Terraform Plan
+      uses: actions/upload-artifact@v4
       with:
         name: tfplan
         path: tfplan
