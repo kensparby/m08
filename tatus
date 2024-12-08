@@ -1,0 +1,67 @@
+[33mcommit 304e226f63287bd79fc1d35741a66d03f924ccc7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Merge: 9ae81fe 24286ac
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sun Dec 8 11:30:55 2024 +0100
+
+    Merge branch 'main' of https://github.com/kensparby/m08
+    ?
+
+[33mcommit 9ae81fe77a8656cd3e14adac06be092c47df40e4[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sun Dec 8 11:30:12 2024 +0100
+
+    Tested and functioning. Let's see if Github manages this time
+
+[33mcommit 24286acb1f863e3cc664f36a6e62f11ca1515f53[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sun Dec 8 11:01:03 2024 +0100
+
+    Update staticwebsite.yml
+
+[33mcommit 18191bfa4ad0347bbe2bbd1ef0266505ff3c2441[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sun Dec 8 10:59:12 2024 +0100
+
+    Update staticwebsite.yml
+
+[33mcommit 778e9a72d977130f1f840ff0ab483a86aa17cdac[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sat Dec 7 23:45:56 2024 +0100
+
+    Update staticwebsite.yml
+
+[33mcommit 3b637b9689f77006da3e1908a9fbe390ecc635de[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sat Dec 7 23:44:31 2024 +0100
+
+    Update staticwebsite.yml
+
+[33mcommit 1c3adaa38a37dffc24902f24e0157a1c547cd57b[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sat Dec 7 23:43:53 2024 +0100
+
+    Update staticwebsite.yml
+
+[33mcommit fba2a628196be67fe231189051f0540749113946[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sat Dec 7 23:42:48 2024 +0100
+
+    Update staticwebsite.yml
+
+[33mcommit 7e3315aa2ec4eb5cbc253d2d503d4d8aacc4c7b1[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sat Dec 7 23:37:05 2024 +0100
+
+    Create staticwebsite.yml
+
+[33mcommit c6880eb10c9607d144f8285f2ecec3402c804a1f[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sat Dec 7 23:06:49 2024 +0100
+
+    modul 8 video 1 - initial
+
+[33mcommit ca59d4136a812f4dca7f25a17069653361f48e7e[m
+Author: Ken Sparby <sparby.k@gmail.com>
+Date:   Sat Dec 7 20:06:48 2024 +0100
+
+    Initial commit
