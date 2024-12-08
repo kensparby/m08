@@ -5,15 +5,13 @@ terraform {
       version = "4.11.0"
     }
   }
-  # backend "azurerm" {
-  #   resource_group_name  = "rg-be-tf-ks"         # Can be passed via `-backend-config=`"resource_group_name=<resource group name>"` in the `init` command.
-  #   storage_account_name = "sabeks1390ornp4nk6"   # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
-  #   container_name       = "kstfstate"                 # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
-  #   key                  = "backend.terraform.tfstate" # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
-  # }
+  backend "azurerm" {
+    resource_group_name  = "rg-be-tf-ks"         # Can be passed via `-backend-config=`"resource_group_name=<resource group name>"` in the `init` command.
+    storage_account_name = "sabeks1390ornp4nk6"   # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
+    container_name       = "kstfstate"                 # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
+    key                  = "modul08test.terraform.tfstate" # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
+  }
 }
-
-data "azurerm_client_config" "current" {}
 
 provider "azurerm" {
   subscription_id = "efc1e7b1-5729-4eea-b33e-12cc6b1c0183"
