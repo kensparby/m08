@@ -63,7 +63,7 @@ jobs:
         if [[ "${{ steps.commit.output.message }}" == *"destroy"* ]]; then
           terraform destroy -auto-approve
         else
-          terraform apply -auto-approve
+          terraform apply -auto-approve tfplan
         fi
 
 
