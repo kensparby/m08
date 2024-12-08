@@ -35,7 +35,7 @@ jobs:
       run: terraform fmt --recursive
 
     - name: Terraform Plan
-      run: terraform plan -out=tfplan -var="rg_name=rgweks9220" -var="sa_name=saksmodul08web001"
+      run: terraform plan -out=tfplan -auto-approve -var="rg_name=rgweks9220" -var="sa_name=saksmodul08web001"
 
     - name: Publish Terraform Plan
       uses: actions/upload-artifact@v4
