@@ -35,16 +35,11 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_storage_account" "sa" {
-  name                     = "${lower(var.sa_name)}${random_string.random_string.result}"
+  name                     = "${var.sa_name}${random_string.random_string.result}"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-}
-
-resource "azurerm_storage_account_static_website" "sa_web" {
-  storage_account_id = azurerm_storage_account.sa.id
-  index_document     = var.index_document
 }
 
 resource "azurerm_storage_blob" "index_html" {
@@ -59,6 +54,11 @@ resource "azurerm_storage_blob" "index_html" {
 resource "local_file" "index_html" {
   filename = var.index_document
   content  = "<h1>Hello World</h1>"
+}
+
+resource "azurerm_storage_account_static_website" "sa_web" {
+  storage_account_id = azurerm_storage_account.sa.id
+  index_document     = var.index_document
 }
 
 # resource "azurerm_resource_group" "rg_backend" {

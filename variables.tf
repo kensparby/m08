@@ -1,22 +1,22 @@
 variable "rg_name" {
-    type = string
-    description = "Name of the resource group"
+  type        = string
+  description = "Name of the resource group"
 }
 
 variable "location" {
-    type = string
-    description = "Location of the resource group"
-    default = "westeurope"
+  type        = string
+  description = "Location of the resource group"
+  default     = "westeurope"
 }
 
 variable "sa_name" {
-    type = string
-    description = "Name of the storage account"
+  type        = string
+  description = "Name of the storage account"
 }
 
 variable "index_document" {
-    type = string
-    default = "index.html"
+  type    = string
+  default = "index.html"
 }
 
 # variable "rg_backend_name" {
