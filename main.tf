@@ -16,7 +16,7 @@ terraform {
 data "azurerm_client_config" "current" {}
 
 provider "azurerm" {
-  subscription_id = data.azurerm_client_config.current.subscription_id
+  subscription_id = "efc1e7b1-5729-4eea-b33e-12cc6b1c0183"
   features {
     # key_vault {
     #   purge_soft_delete_on_destroy    = true
