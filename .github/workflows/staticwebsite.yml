@@ -11,16 +11,16 @@ on:
     branches:
     - main
   
-  workflow_dispatch:
-    inputs:
-      action_type:
-        description: 'What action should be performed?'
-        required: true
-        default: 'apply'
-        type: choice
-        options:
-        - apply
-        - destroy
+  # workflow_dispatch:
+  #   inputs:
+  #     action_type:
+  #       description: 'What action should be performed?'
+  #       required: true
+  #       default: 'apply'
+  #       type: choice
+  #       options:
+  #       - apply
+  #       - destroy
 
 jobs:
   terraform:
@@ -54,16 +54,29 @@ jobs:
         name: tfplan
         path: tfplan
 
+    - name: 'Check last commit message'
+      id: commit
+      run: echo "::set-output name=message::$(git log --format=%B -n 1)"
+
+    - name: 'Conditionally run terraform'
+      run: |
+        if [[ "${{ steps.commit.output.message }}" == *"destroy"* ]]; then
+          terraform destroy -auto-approve
+        else
+          terraform apply -auto-approve
+        fi
+
+
     # - name: Terraform Apply
     #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     #   run: terraform apply -auto-approve tfplan
 
-    - name: Terraform Apply
-      if: github.event.inputs.action_type == 'apply'
-      id: apply
-      run: terraform apply -auto-approve
+    # - name: Terraform Apply
+    #   if: github.event.inputs.action_type == 'apply'
+    #   id: apply
+    #   run: terraform apply -auto-approve
 
-    - name: Terraform Destroy
-      if: github.event.inputs.action_type == 'destroy'
-      id: destroy
-      run: terraform destroy -auto-approve
+    # - name: Terraform Destroy
+    #   if: github.event.inputs.action_type == 'destroy'
+    #   id: destroy
+    #   run: terraform destroy -auto-approve
