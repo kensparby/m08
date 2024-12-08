@@ -53,7 +53,7 @@ resource "azurerm_storage_blob" "index_html" {
 
 resource "local_file" "index_html" {
   filename = var.index_document
-  content  = "<h1>Hello World</h1><br><p>This is a test</p>"
+  content  = "<h1>Made with Terraform CI/CD</h1>"
 }
 
 resource "azurerm_storage_account_static_website" "sa_web" {
