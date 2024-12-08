@@ -14,7 +14,7 @@ terraform {
 }
 
 provider "azurerm" {
-  subscription_id = "${secrets.AZURE_SUBSCRIPTION_ID}"
+  subscription_id = "${secrets.AZURE_SUBSCRIPTION_ID ? secrets.AZURE_SUBSCRIPTION_ID : env.AZURE_SUBSCRIPTION_ID}"
   features {
     # key_vault {
     #   purge_soft_delete_on_destroy    = true
