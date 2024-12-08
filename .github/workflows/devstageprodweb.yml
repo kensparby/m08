@@ -38,7 +38,7 @@ jobs:
         run: terraform workspace select dev || terraform workspace new dev
   
       - name: Terraform apply dev
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -var="rg_name=rgweks9220" -var="sa_name=saksmodul08web001
   
       - name: Test dev
         run: curl $(terraform output -raw primary_web_endpoint)
@@ -62,7 +62,7 @@ jobs:
         run: terraform workspace select stage || terraform workspace new stage
 
       - name: Terraform apply stage
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -var="rg_name=rgweks9220" -var="sa_name=saksmodul08web001
 
       - name: Test stage
         run: curl $(terraform output -raw primary_web_endpoint)
@@ -89,7 +89,7 @@ jobs:
         run: terraform workspace select prod || terraform workspace new prod
     
       - name: Terraform apply prod
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -var="rg_name=rgweks9220" -var="sa_name=saksmodul08web001
 
       - name: Test prod
         run: curl $(terraform output -raw primary_web_endpoint)
