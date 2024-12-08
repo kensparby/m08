@@ -62,6 +62,8 @@ jobs:
       run: |
         if [[ "${{ steps.commit.output.message }}" == *"destroy"* ]]; then
           terraform destroy -auto-approve
+        elif [[ "${{ steps.commit.output.message }}" == *"apply -force"* ]]; then
+          terraform apply -auto-approve -lock=false
         else
           terraform apply -auto-approve tfplan
         fi
