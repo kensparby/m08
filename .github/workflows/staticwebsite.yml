@@ -46,7 +46,12 @@ jobs:
       run: terraform fmt --recursive
 
     - name: Terraform Plan
-      run: terraform plan -out=tfplan -var="rg_name=rgweks9220" -var="sa_name=saksmodul08web001" 
+      run: |
+        if [[ "${{ steps.commit.output.message }}" == *"apply -force"* ]]; then
+          terraform plan -out=tfplan -var="rg_name=rgweks9220" -var="sa_name=saksmodul08web001" -lock=false
+        else
+          terraform plan -out=tfplan -var="rg_name=rgweks9220" -var="sa_name=saksmodul08web001" 
+        fi
 
     - name: Publish Terraform Plan
       uses: actions/upload-artifact@v4
@@ -62,8 +67,6 @@ jobs:
       run: |
         if [[ "${{ steps.commit.output.message }}" == *"destroy"* ]]; then
           terraform destroy -auto-approve
-        elif [[ "${{ steps.commit.output.message }}" == *"apply -force"* ]]; then
-          terraform apply -auto-approve -lock=false
         else
           terraform apply -auto-approve tfplan
         fi
